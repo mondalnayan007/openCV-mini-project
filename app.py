@@ -15,7 +15,13 @@ if image is not None :
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-    
+    elif operation == "2":
+        w = int(input("Enter your desired width : "))
+        h = int(input("Enter your desired height : "))
+        resized = cv2.resize(image,(w,h) )
+        cv2.imshow("Showing your resized image " , resized)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
 else:
     print("Invalid image path check and retry !!!")
