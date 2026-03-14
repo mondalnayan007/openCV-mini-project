@@ -35,5 +35,34 @@ if image is not None :
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
+    elif operation == "4":
+        choice = input("Enter your choice Horizontal / vertical/ both :").lower()
+        def image_flip(c):
+            fliped = cv2.flip(image , c)
+            cv2.imshow("Showing your fliped image " , fliped)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
+
+            
+        if choice == 'horizontal':
+            choice = 1
+            image_flip(choice)
+        elif choice == 'vertical' :
+            choice = 0 
+            image_flip(choice)
+
+        elif choice == 'both':
+            choice = -1
+            image_flip(choice)
+
+        else:
+            print("Invalid Choice !!!!!!")
+
+    elif operation == '5':
+        
+            
+    
+
+
 else:
     print("Invalid image path check and retry !!!")
