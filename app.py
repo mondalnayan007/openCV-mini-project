@@ -1,6 +1,7 @@
 import cv2 
 
 image = cv2.imread("D:/Python/Opencv/mini project/butterfly.png")
+# print(image.shape)
 
 # cv2.imshow("Image is showing" , image)
 # cv2.waitKey()
@@ -20,6 +21,17 @@ if image is not None :
         h = int(input("Enter your desired height : "))
         resized = cv2.resize(image,(w,h) )
         cv2.imshow("Showing your resized image " , resized)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+    elif operation == "3":
+        t = int(input("Enter  top  point : "))
+        l = int(input("Enter left point : "))
+        b = int(input("Enter bottom  point : "))
+        r = int(input("Enter  right point : "))
+
+        croped = image[ t:b , l:r]
+        cv2.imshow("Showing your croped image " , croped)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
