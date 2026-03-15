@@ -12,6 +12,7 @@ if image is not None :
     operation = input("Choose your Operation  : ")
     if operation == "1":
         gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+        cv2.imshow("Showing Original Image", image)
         cv2.imshow("GrayScale image is showing" , gray)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
@@ -20,6 +21,7 @@ if image is not None :
         w = int(input("Enter your desired width : "))
         h = int(input("Enter your desired height : "))
         resized = cv2.resize(image,(w,h) )
+        cv2.imshow("Showing Original Image", image)
         cv2.imshow("Showing your resized image " , resized)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
@@ -31,6 +33,7 @@ if image is not None :
         r = int(input("Enter  right point : "))
 
         croped = image[ t:b , l:r]
+        cv2.imshow("Showing Original Image", image)
         cv2.imshow("Showing your croped image " , croped)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
@@ -39,6 +42,7 @@ if image is not None :
         choice = input("Enter your choice Horizontal / vertical/ both :").lower()
         def image_flip(c):
             fliped = cv2.flip(image , c)
+            cv2.imshow("Showing Original Image", image)
             cv2.imshow("Showing your fliped image " , fliped)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
@@ -65,6 +69,7 @@ if image is not None :
 
         M = cv2.getRotationMatrix2D(center, angle , 1.0)
         rotation = cv2.warpAffine(image,M,(w,h))
+        cv2.imshow("Showing Original Image", image)
         cv2.imshow("Showing your Rotated image " , rotation)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
