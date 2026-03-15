@@ -59,9 +59,16 @@ if image is not None :
             print("Invalid Choice !!!!!!")
 
     elif operation == '5':
-        
-            
-    
+        h,w = image.shape[:2]
+        center = (w//2, h//2)
+        angle = int(input("Enter your roatation angle : "))
+
+        M = cv2.getRotationMatrix2D(center, angle , 1.0)
+        rotation = cv2.warpAffine(image,M,(w,h))
+        cv2.imshow("Showing your Rotated image " , rotation)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
 
 
 else:
